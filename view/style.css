@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-product {
+    display: block;
+    margin: 0 auto;
+}
+
+#add-product span {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#add-product-fields {
+    width: 200px;
+
+    display: grid;
+    gap: 5px 2px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#field-add-product-image {
+    display: none;
+}
+
+#add-image-label {
+    grid-column: span 2;
+    justify-self: center;
+
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background-size: 100%;
+}
+
+#add-image-label::before {
+    content: '';
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+
+    transition: all 200ms;
+}
+
+#add-image-label:hover::before {
+    background-color: rgba(0, 174, 255, 0.315);
+    background-image: url('./src/images/edit.png');
+}
+
+#field-add-product-name,
+#field-add-product-quantity,
+#field-add-product-price {
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 4px 10px;
+    width: 100%;
+}
+
+#field-add-product-name {
+    grid-column: span 2;
+}
+
+#products-list {
+    list-style: none;
+
+    width: 80%;
+    height: 50vh;
+    margin-top: 50px;
+
+    background-color: rgb(218, 218, 218);
+
+    overflow-y: auto;
+}
+
+#products-list::-webkit-scrollbar {
+    background-color: rgb(218, 218, 218);
+    width: 5px;
+}
+
+#products-list::-webkit-scrollbar-thumb {
+    background-color: rgba(31, 31, 31, 0.534);
+    border-radius: 6px;
+}
+
+.product-item {
+    width: 100%;
+    height: 100px;
+    padding: 0 50px;
+    background-color: aliceblue;
+
+    border: 5px solid rgb(218, 218, 218);
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 350px;
+}
+
+.product-infos input {
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 4px 10px;
+}
+
+.product-infos .product-name {
+    width: 200px;
+}
+
+.product-infos input:disabled {
+    border: 0;
+}
+
+.product-price {
+    text-align: center;
+}
+
+.remove-product, .edit-product {
+    cursor: pointer;
+}
